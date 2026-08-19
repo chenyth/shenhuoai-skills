@@ -29,7 +29,7 @@ from uuid import uuid4
 
 CLIENT_VERSION = "0.3.0"
 SKILL_NAME = "shenhuo-ai"
-SKILL_VERSION = "0.3.0"
+SKILL_VERSION = "0.3.1"
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ENV_PATH = SKILL_ROOT / ".env"
 SKILL_CHANNEL_PATH = SKILL_ROOT / "channel.json"
