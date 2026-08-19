@@ -1,0 +1,12 @@
+.DS_Store
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+**/.env
+**/..env.*.tmp
+**/.trial-bootstrap.json
+**/..trial-bootstrap.json.*.tmp
+**/references/designer-catalog.current.md
+**/references/.designer-catalog.current.md.*.tmp

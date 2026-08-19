@@ -1,0 +1,7 @@
+interface:
+  display_name: "神火 AI"
+  short_description: "匹配专业 AI 设计师，支持安全试用、澄清需求并生成设计图片"
+  default_prompt: "使用 $shenhuoai 分析我的设计需求，推荐合适的设计师并完成设计。"
+
+policy:
+  allow_implicit_invocation: true
