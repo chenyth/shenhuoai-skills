@@ -51,7 +51,7 @@ description: 调用神火 AI 中不同能力的虚拟设计师完成图片设计
 
 只有用户明确要求生成、渲染或预览图片时才运行 `generate`；若用户此前已明确要求生图，不要重复增加批准步骤。提示词覆盖仅影响本次生成，优先通过 JSON 文件传入。
 
-运行 `wait-generation`。成功后立即用 `download` 通过鉴权代理下载到本地，向用户返回本地绝对路径和 `actual_credits`；不要直接展示需要 Authorization 的远程 URL。
+运行 `wait-generation`。成功后立即用 `download` 通过鉴权代理下载到本地。对返回的 `data.files` 中每条 `kind=image` 记录，向用户列出本地绝对路径（`path`），并报告 `actual_credits`；不要把 manifest 当作图片展示。如果当前 Agent 支持从本地路径附加、渲染或内联展示图片，尽量把这些本地图片直接展示在当前对话流中；展示能力不可用或展示失败时，仍以本地绝对路径完成交付，不得因此让任务失败。不要为展示而上传图片到第三方，不要输出图片字节、Base64 或 data URL，也不要直接展示需要 Authorization 的远程 URL。
 
 失败或取消时仍检查是否有已结算的部分结果；如有则下载并明确标注为部分结果。`OUTCOME_UNKNOWN` 不得自动重试，要求用户在 Web 或由人工核对。
 

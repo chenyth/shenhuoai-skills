@@ -3,5 +3,5 @@
   "routing_enabled": true,
   "schema_version": 1,
   "skill_name": "shenhuo-ai",
-  "skill_version": "0.3.1"
+  "skill_version": "0.3.2"
 }

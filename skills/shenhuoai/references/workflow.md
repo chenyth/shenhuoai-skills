@@ -176,7 +176,7 @@ python3 <client> download --variant-id <var_...> [--variant-id <var_...> ...] \
   --output-dir <绝对目录>
 ```
 
-只向用户展示下载后的绝对路径。`wait-generation` 中的 `actual_credits` 是最终实际积分。
+从 `download` 返回的 `data.files` 中，仅处理 `kind=image` 的记录：始终向用户列出每张图片的本地绝对路径（`path`），不要把 `kind=manifest` 当作图片。若当前 Agent 支持本地图片附件、渲染或内联预览，再尽量使用这些本地路径把图片直接展示在当前对话流中。对话展示属于增强交付：能力不可用或展示失败时仍返回路径，不得把成功下载判为失败、重新生成图片，或为展示而上传到第三方。不得输出图片字节、Base64、data URL 或受保护的远程结果 URL。`wait-generation` 中的 `actual_credits` 是最终实际积分。
 
 客户端新建输出目录时使用 `0700`，图片和 manifest 使用 `0600`。如果调用方指定已经存在的目录，客户端不会擅自修改目录权限；调用方应确认该目录不是同机共享目录。
 
